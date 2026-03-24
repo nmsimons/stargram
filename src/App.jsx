@@ -5,6 +5,8 @@ import FileUpload from './components/FileUpload';
 import PrintableOutput from './components/PrintableOutput';
 import './App.css';
 
+const isDev = import.meta.env.DEV;
+
 function App() {
   const [stargrams, setStargrams] = useState(null);
   const [fileName, setFileName] = useState('');
@@ -20,6 +22,12 @@ function App() {
       setStargrams(parseStargrams(rawData));
     };
     reader.readAsArrayBuffer(file);
+  }, []);
+
+  const loadTestData = useCallback(async () => {
+    const { testStargrams } = await import('./utils/testData');
+    setStargrams(testStargrams);
+    setFileName('test data');
   }, []);
 
   const handleClear = () => {
@@ -48,6 +56,11 @@ function App() {
         {!stargrams && (
           <section className="upload-section no-print">
             <FileUpload onFileLoaded={handleFile} />
+            {isDev && (
+              <button className="test-data-btn" onClick={loadTestData}>
+                Load test data
+              </button>
+            )}
           </section>
         )}
 

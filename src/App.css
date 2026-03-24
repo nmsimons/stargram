@@ -118,8 +118,7 @@ th {
 
 .print-controls {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
@@ -149,6 +148,25 @@ th {
   text-align: center;
   color: var(--text);
   padding: 2rem;
+}
+
+/* Test data button (dev only) */
+.test-data-btn {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.test-data-btn:hover {
+  background: var(--code-bg);
+  color: var(--text-h);
 }
 
 /* Print styles */

@@ -9,7 +9,6 @@ export default function PrintableOutput({ stargrams }) {
     <div className="printable-section">
       <div className="print-controls no-print">
         <button onClick={handlePrint}>🖨️ Print Stargrams</button>
-        <span className="print-count">{stargrams.length} stargram{stargrams.length !== 1 ? 's' : ''}</span>
       </div>
 
       <div className="print-content cards-grid">
