@@ -2,7 +2,7 @@
 
 .stargram-card {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 160px 1fr;
   background: #fff;
   page-break-inside: avoid;
   break-inside: avoid;
@@ -29,7 +29,11 @@
   font-size: 0.7rem;
   line-height: 1.5;
   color: #333;
-  max-width: 180px;
+  width: 160px;
+  min-width: 160px;
+  max-width: 160px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .card-fields {
@@ -52,6 +56,8 @@
 
 .card-value {
   font-weight: 400;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ---- Right side: the actual stargram ---- */
