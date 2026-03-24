@@ -212,7 +212,7 @@ th {
   }
 
   .stargram-card:last-child {
-    border-bottom: none;
+    border-bottom: 1px dashed #ccc;
   }
 
   .card-left {
@@ -220,9 +220,6 @@ th {
   }
 
   /* Page break after every 4th card */
-  .stargram-card:nth-child(4n) {
-    border-bottom: none;
-  }
   .stargram-card:nth-child(4n + 1):not(:first-child) {
     page-break-before: always;
   }
