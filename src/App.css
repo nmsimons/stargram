@@ -212,11 +212,7 @@ th {
   }
 
   .card-left {
-    border-right: none;
-  }
-
-  .card-divider {
-    background: #000;
+    border-right-color: #bbb;
   }
 
   /* Page break after every 4th card */
