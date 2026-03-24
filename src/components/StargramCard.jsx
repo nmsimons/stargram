@@ -6,17 +6,21 @@ export default function StargramCard({ stargram }) {
   return (
     <div className="stargram-card">
       <div className="card-left">
-        <div className="card-field">
-          <span className="card-label">Show:</span>
-          <span className="card-value">{show}</span>
-        </div>
-        <div className="card-field">
-          <span className="card-label">Treat:</span>
-          <span className="card-value">{treat}</span>
-        </div>
-        <div className="card-field">
-          <span className="card-label">Allergies:</span>
-          <span className="card-value">{allergies}</span>
+        <div className="card-fields">
+          <div className="card-field">
+            <span className="card-label">Show:</span>
+            <span className="card-value">{show}</span>
+          </div>
+          <div className="card-field">
+            <span className="card-label">Treat:</span>
+            <span className="card-value">{treat}</span>
+          </div>
+          {allergies && allergies.toLowerCase() !== 'no' && allergies.toLowerCase() !== 'none' && (
+            <div className="card-field card-allergy">
+              <span className="card-label">Allergies:</span>
+              <span className="card-value">{allergies}</span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -25,24 +29,29 @@ export default function StargramCard({ stargram }) {
           <polygon
             points="100,8 123,72 192,72 136,112 156,178 100,143 44,178 64,112 8,72 77,72"
             fill="none"
-            stroke="#333"
-            strokeWidth="2"
+            stroke="#222"
+            strokeWidth="1.5"
+            strokeLinejoin="round"
           />
         </svg>
       </div>
 
       <div className="card-right">
-        <div className="card-right-top">
+        <div className="card-toFrom">
           <div className="card-field">
             <span className="card-label">To:</span>
-            <span className="card-value">{recipient}</span>
+            <span className="card-value card-name">{recipient}</span>
           </div>
           <div className="card-field">
             <span className="card-label">From:</span>
-            <span className="card-value">{sender}</span>
+            <span className="card-value card-name">{sender}</span>
           </div>
         </div>
-        {message && <p className="card-message">"{message}"</p>}
+        {message && (
+          <div className="card-message">
+            <p>"{message}"</p>
+          </div>
+        )}
       </div>
     </div>
   );
