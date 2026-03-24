@@ -39,9 +39,9 @@ function App() {
     <div className="app">
       <header className="no-print">
         <div className="header-logo">
-          <svg className="header-star" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <svg className="header-star" viewBox="0 0 474 463" xmlns="http://www.w3.org/2000/svg">
             <polygon
-              points="100,8 123,72 192,72 136,112 156,178 100,143 44,178 64,112 8,72 77,72"
+              points="473.486,182.079 310.615,157.952 235.904,11.23 162.628,158.675 0,184.389 117.584,299.641 91.786,462.257 237.732,386.042 384.416,460.829 357.032,298.473"
               fill="none"
               stroke="currentColor"
               strokeWidth="4"
