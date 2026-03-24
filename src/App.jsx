@@ -48,7 +48,7 @@ function App() {
               strokeLinejoin="round"
             />
           </svg>
-          <h1>STARGRAM</h1>
+          <h1>STARGRAMS</h1>
         </div>
       </header>
 
