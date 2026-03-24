@@ -88,13 +88,34 @@ th {
   color: var(--text-h);
 }
 
+/* Cards grid — 2 cards per row on screen and print */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Printable section */
 .printable-section {
   margin-top: 2rem;
 }
 
 .print-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.print-count {
+  font-size: 0.9rem;
+  color: var(--text);
 }
 
 .print-controls button {
@@ -128,18 +149,22 @@ th {
 
   .app {
     padding: 0;
+    max-width: 100%;
   }
 
-  .print-content {
-    margin: 0;
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
   }
 
-  table {
+  .stargram-card {
+    border: 1.5px solid #999;
+    padding: 0.75rem;
     font-size: 10pt;
   }
 
-  th {
-    background: #eee !important;
-    -webkit-print-color-adjust: exact;
+  .star-container {
+    width: 120px;
+    height: 120px;
   }
 }

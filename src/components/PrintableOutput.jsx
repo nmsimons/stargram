@@ -1,36 +1,21 @@
-export default function PrintableOutput({ data }) {
-  if (!data || data.length === 0) return null;
+import StargramCard from './StargramCard';
 
-  const headers = Object.keys(data[0]);
+export default function PrintableOutput({ stargrams }) {
+  if (!stargrams || stargrams.length === 0) return null;
 
   const handlePrint = () => window.print();
 
   return (
     <div className="printable-section">
       <div className="print-controls no-print">
-        <button onClick={handlePrint}>🖨️ Print</button>
+        <button onClick={handlePrint}>🖨️ Print Stargrams</button>
+        <span className="print-count">{stargrams.length} stargram{stargrams.length !== 1 ? 's' : ''}</span>
       </div>
 
-      <div className="print-content">
-        <h2>Stargram Output</h2>
-        <table>
-          <thead>
-            <tr>
-              {headers.map((h) => (
-                <th key={h}>{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((row, i) => (
-              <tr key={i}>
-                {headers.map((h) => (
-                  <td key={h}>{row[h]}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="print-content cards-grid">
+        {stargrams.map((sg, i) => (
+          <StargramCard key={i} stargram={sg} />
+        ))}
       </div>
     </div>
   );
