@@ -29,18 +29,20 @@ export default function StargramCard({ stargram }) {
             strokeWidth="2"
           />
         </svg>
-        {message && <p className="card-message">"{message}"</p>}
       </div>
 
       <div className="card-right">
-        <div className="card-field">
-          <span className="card-label">To:</span>
-          <span className="card-value">{recipient}</span>
+        <div className="card-right-top">
+          <div className="card-field">
+            <span className="card-label">To:</span>
+            <span className="card-value">{recipient}</span>
+          </div>
+          <div className="card-field">
+            <span className="card-label">From:</span>
+            <span className="card-value">{sender}</span>
+          </div>
         </div>
-        <div className="card-field">
-          <span className="card-label">From:</span>
-          <span className="card-value">{sender}</span>
-        </div>
+        {message && <p className="card-message">"{message}"</p>}
       </div>
     </div>
   );

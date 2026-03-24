@@ -88,11 +88,10 @@ th {
   color: var(--text-h);
 }
 
-/* Cards grid — single column, 4 cards per printed page */
+/* Cards grid — single column, fill the page */
 .cards-grid {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .cards-grid .stargram-card + .stargram-card {
@@ -145,9 +144,16 @@ th {
     display: none !important;
   }
 
-  body, html {
+  * {
     margin: 0;
     padding: 0;
+  }
+
+  body, html, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .app {
@@ -155,24 +161,28 @@ th {
     max-width: 100%;
   }
 
+  .printable-section {
+    margin: 0;
+  }
+
+  .cards-grid {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Each card fills exactly 1/4 of the page */
   .stargram-card {
-    border: 1px solid #000;
+    height: 25vh;
+    box-sizing: border-box;
   }
 
-  .card-left {
-    border-right: 1px solid #000;
-  }
-
-  /* 4 cards per page */
-  .stargram-card:nth-child(4n + 1) {
-    page-break-before: auto;
-  }
+  /* Page break after every 4th card */
   .stargram-card:nth-child(4n + 5) {
     page-break-before: always;
   }
 
   .star-svg {
-    width: 110px;
-    height: 110px;
+    max-width: 160px;
+    max-height: 160px;
   }
 }
