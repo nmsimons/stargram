@@ -76,7 +76,7 @@ export const testStargrams = [
     recipient: 'Arjun Patel',
     show: 'Sat, Mar 21 - 7pm',
     treat: 'Chocolate candy',
-    message: 'We drove four hours to see you perform and it is worth every mile.',
+    message: 'We drove four hours to see you perform and it is worth every single mile. You have worked so hard this whole year and we could not be more proud of the incredible performer you have become. We love you so much!',
     allergies: 'Gluten',
   },
   {
@@ -110,5 +110,38 @@ export const testStargrams = [
     treat: 'Gummy bears',
     message: 'Remember: have fun up there. That is what it is all about.',
     allergies: 'no',
+  },
+  // --- Edge cases: long names, long messages, long everything ---
+  {
+    sender: 'The Entire Kowalski-Beaumont Extended Family Including Grandma Irene',
+    recipient: 'Alexandria Kowalski-Beaumont III',
+    show: 'Sat, Mar 21 - 7pm',
+    treat: 'Chocolate candy',
+    message: 'We are so incredibly proud of everything you have accomplished this year. From the very first rehearsal all the way to tonight, you have poured your heart and soul into this production and it truly shows. Every single person in this family is cheering for you from the audience tonight. You were born to be on that stage and we cannot wait to see you absolutely shine under those lights. Break a leg, sweetheart! We love you more than words can say!',
+    allergies: 'Peanuts, tree nuts, shellfish, dairy, soy',
+  },
+  {
+    sender: 'J',
+    recipient: 'Z',
+    show: 'Fri, Mar 20 - 7pm',
+    treat: 'Lollipop',
+    message: '!',
+    allergies: 'no',
+  },
+  {
+    sender: 'Mrs. Bartholomew-Richardson',
+    recipient: 'The Entire Cast and Crew of the Spring Musical Production',
+    show: 'Sat, Mar 21 - 2pm & 7pm',
+    treat: 'Assorted candy variety pack',
+    message: 'As your drama teacher for the past three years, I have watched each and every one of you grow from nervous newcomers into confident, talented performers. This show represents months of late rehearsals, weekend set-building sessions, countless line run-throughs, and more hard work than anyone in the audience will ever fully appreciate. I want you all to know that regardless of what happens on that stage tonight, you have already succeeded beyond my wildest expectations. This is YOUR moment. Own it. Enjoy every second of it. And remember that the friendships and memories you have made along the way are worth far more than any standing ovation. I love you all. Now go out there and show them what you are made of!',
+    allergies: 'Gluten, Red dye #40',
+  },
+  {
+    sender: 'Anonymous',
+    recipient: 'Mia Johnson',
+    show: 'Fri, Mar 20 - 7pm',
+    treat: 'Chocolate candy',
+    message: '',
+    allergies: '',
   },
 ];

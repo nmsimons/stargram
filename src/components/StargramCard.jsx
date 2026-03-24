@@ -1,4 +1,35 @@
+import { useRef, useEffect, useState } from 'react';
 import './StargramCard.css';
+
+function AutoShrinkMessage({ text }) {
+  const ref = useRef(null);
+  const [fontSize, setFontSize] = useState(0.85);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let size = 0.85;
+    const minSize = 0.5;
+    el.style.fontSize = `${size}rem`;
+
+    while (el.scrollHeight > el.clientHeight && size > minSize) {
+      size -= 0.05;
+      el.style.fontSize = `${size}rem`;
+    }
+    setFontSize(size);
+  }, [text]);
+
+  return (
+    <p
+      ref={ref}
+      className="card-message"
+      style={{ fontSize: `${fontSize}rem` }}
+    >
+      "{text}"
+    </p>
+  );
+}
 
 export default function StargramCard({ stargram }) {
   const { sender, recipient, show, treat, message, allergies } = stargram;
@@ -46,7 +77,7 @@ export default function StargramCard({ stargram }) {
               <span className="card-value card-name">{sender}</span>
             </div>
           </div>
-          {message && <p className="card-message">"{message}"</p>}
+          {message && <AutoShrinkMessage text={message} />}
         </div>
       </div>
     </div>
