@@ -16,7 +16,7 @@
 }
 
 .stargram-card:last-child {
-  border-bottom: none;
+  border-bottom: 1px dashed #ccc;
 }
 
 /* ---- Left column: compact info for handlers ---- */
