@@ -1,4 +1,3 @@
-import StarShape from './StarShape';
 import './StargramCard.css';
 
 export default function StargramCard({ stargram }) {
@@ -8,27 +7,40 @@ export default function StargramCard({ stargram }) {
     <div className="stargram-card">
       <div className="card-left">
         <div className="card-field">
-          <span className="card-label">Show</span>
+          <span className="card-label">Show:</span>
           <span className="card-value">{show}</span>
         </div>
         <div className="card-field">
-          <span className="card-label">Treat</span>
+          <span className="card-label">Treat:</span>
           <span className="card-value">{treat}</span>
         </div>
-        {allergies && allergies.toLowerCase() !== 'no' && allergies.toLowerCase() !== 'none' && (
-          <div className="card-field card-allergies">
-            <span className="card-label">⚠ Allergies</span>
-            <span className="card-value">{allergies}</span>
-          </div>
-        )}
+        <div className="card-field">
+          <span className="card-label">Allergies:</span>
+          <span className="card-value">{allergies}</span>
+        </div>
+      </div>
+
+      <div className="card-center">
+        <svg className="star-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <polygon
+            points="100,8 123,72 192,72 136,112 156,178 100,143 44,178 64,112 8,72 77,72"
+            fill="none"
+            stroke="#333"
+            strokeWidth="2"
+          />
+        </svg>
+        {message && <p className="card-message">"{message}"</p>}
       </div>
 
       <div className="card-right">
-        <StarShape to={recipient} from={sender} />
-      </div>
-
-      <div className="card-message">
-        <p>"{message}"</p>
+        <div className="card-field">
+          <span className="card-label">To:</span>
+          <span className="card-value">{recipient}</span>
+        </div>
+        <div className="card-field">
+          <span className="card-label">From:</span>
+          <span className="card-value">{sender}</span>
+        </div>
       </div>
     </div>
   );
