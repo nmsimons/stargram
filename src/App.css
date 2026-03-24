@@ -181,7 +181,11 @@ th {
   }
 
   .card-left {
-    border-right: 1px dashed #bbb;
+    border-right: none;
+  }
+
+  .card-divider {
+    background: #000;
   }
 
   /* Page break after every 4th card */

@@ -15,13 +15,15 @@ export default function StargramCard({ stargram }) {
             <span className="card-label">Treat:</span>
             <span className="card-value">{treat}</span>
           </div>
-          {allergies && allergies.toLowerCase() !== 'no' && allergies.toLowerCase() !== 'none' && (
-            <div className="card-field card-allergy">
-              <span className="card-label">Allergies:</span>
-              <span className="card-value">{allergies}</span>
-            </div>
-          )}
+          <div className="card-field">
+            <span className="card-label">Allergies:</span>
+            <span className="card-value">{allergies || '—'}</span>
+          </div>
         </div>
+      </div>
+
+      <div className="card-divider-wrap">
+        <div className="card-divider"></div>
       </div>
 
       <div className="card-center">
@@ -48,9 +50,7 @@ export default function StargramCard({ stargram }) {
           </div>
         </div>
         {message && (
-          <div className="card-message">
-            <p>"{message}"</p>
-          </div>
+          <p className="card-message">"{message}"</p>
         )}
       </div>
     </div>
