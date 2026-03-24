@@ -30,8 +30,18 @@ function App() {
   return (
     <div className="app">
       <header className="no-print">
-        <h1>⭐ Stargram</h1>
-        <p>Upload an Excel file to generate printable stargrams</p>
+        <div className="header-logo">
+          <svg className="header-star" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <polygon
+              points="100,8 123,72 192,72 136,112 156,178 100,143 44,178 64,112 8,72 77,72"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="4"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <h1>STARGRAM</h1>
+        </div>
       </header>
 
       <main>
