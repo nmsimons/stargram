@@ -3,16 +3,21 @@ import './StargramCard.css';
 
 function AutoShrinkMessage({ text }) {
   const ref = useRef(null);
-  const [fontSize, setFontSize] = useState(0.85);
+  const [fontSize, setFontSize] = useState(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
+    // Reset to default size to measure natural fit
+    el.style.fontSize = '0.85rem';
+    setFontSize(null);
+
+    // Only shrink if content overflows
+    if (el.scrollHeight <= el.clientHeight) return;
+
     let size = 0.85;
     const minSize = 0.5;
-    el.style.fontSize = `${size}rem`;
-
     while (el.scrollHeight > el.clientHeight && size > minSize) {
       size -= 0.05;
       el.style.fontSize = `${size}rem`;
@@ -24,7 +29,7 @@ function AutoShrinkMessage({ text }) {
     <p
       ref={ref}
       className="card-message"
-      style={{ fontSize: `${fontSize}rem` }}
+      style={fontSize ? { fontSize: `${fontSize}rem` } : undefined}
     >
       "{text}"
     </p>
