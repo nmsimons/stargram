@@ -2,7 +2,7 @@
 
 .stargram-card {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 220px 1fr;
   background: #fff;
   page-break-inside: avoid;
   break-inside: avoid;
@@ -29,9 +29,9 @@
   font-size: 0.7rem;
   line-height: 1.5;
   color: #333;
-  width: 160px;
-  min-width: 160px;
-  max-width: 160px;
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
   overflow: hidden;
   box-sizing: border-box;
 }
