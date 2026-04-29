@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import starImg from '../assets/star.png';
 import './StargramCard.css';
 
 function AutoShrinkMessage({ text }) {
@@ -60,15 +61,7 @@ export default function StargramCard({ stargram }) {
 
       <div className="card-right-section">
         <div className="card-center">
-          <svg className="star-svg" viewBox="0 0 474 463" xmlns="http://www.w3.org/2000/svg">
-            <polygon
-              points="473.486,182.079 310.615,157.952 235.904,11.23 162.628,158.675 0,184.389 117.584,299.641 91.786,462.257 237.732,386.042 384.416,460.829 357.032,298.473"
-              fill="none"
-              stroke="#222"
-              strokeWidth="5"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <img className="star-img" src={starImg} alt="" />
         </div>
 
         <div className="card-right">

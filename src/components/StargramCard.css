@@ -82,6 +82,13 @@
   height: 150px;
 }
 
+.star-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+}
+
 /* To / From / Message */
 .card-right {
   display: flex;
